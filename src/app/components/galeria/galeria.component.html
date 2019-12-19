@@ -1,0 +1,72 @@
+<app-menu></app-menu>
+<div class="row">
+
+    <div class=col-md-12>
+      <img src="./assets/images/prevenir/familia.jpg" style="max-width: 100%; padding-top: 65px; width: 100%;">
+    </div>
+
+  </div>
+
+
+  <div class="contenido">
+
+
+  <div class="row">
+      <div class=col-md-1></div>
+      <div class="col-md-10">
+        <h2 class="text-center tituloPrincipal">Galería</h2>
+      </div>
+      <div class=col-md-1></div>
+    </div>
+      <!-- Grid column -->
+
+      <div class="row">
+        <div class="col-md-1"></div>
+      <div class="col-md-10 d-flex justify-content-center sm-5" style="text-align: center;">
+
+        <div class="row">
+          <div class="col-md-3">
+              <button type="button" class="btn btn-outline-black waves-effect filter" data-rel="all" (click)="tipo='todos'">Todos</button>
+          </div>
+          <div class="col-md-3">
+             <button type="button" class="btn btn-outline-black waves-effect filter" data-rel="1" (click)="tipo='informacion'">Información</button>
+           </div>
+          <div class="col-md-3">
+              <button type="button" class="btn btn-outline-black waves-effect filter" data-rel="2" (click)="tipo='serviciosF'">Servicios Funerarios</button>
+          </div>
+          <div class="col-md-3">
+             <button type="button" class="btn btn-outline-black waves-effect filter" data-rel="3" (click)="tipo='eventos'">Eventos</button>
+          </div>
+
+        </div>
+
+      </div>
+        <div class="col-md-1"></div>
+  </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-1">
+      </div>
+      <div class="col-md-10">
+        <div class="gallery" id="gallery">
+
+          <!-- Grid column -->
+          <div class="mb-3 pics animation all 1" *ngFor="let i of fotografias | imagenes:tipo" >
+            <img class="img-fluid" [src]="url + i.ruta" alt="Prevenir Express Previsión Excequial">
+          </div>
+
+
+        </div>
+        <!-- Grid row -->
+      </div>
+    </div>
+    <div class="col-md-1">
+    </div>
+
+  <!-- Grid row -->
+
+  <!-- Grid row -->
+
+
+  <app-footer></app-footer>

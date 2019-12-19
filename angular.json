@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "prevenirWeb2": {
+    "prevenirWeb": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/prevenirWeb2",
+            "outputPath": "dist/prevenirWeb",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -26,7 +26,9 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/nuevo.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -63,18 +65,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "prevenirWeb2:build"
+            "browserTarget": "prevenirWeb:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "prevenirWeb2:build:production"
+              "browserTarget": "prevenirWeb:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "prevenirWeb2:build"
+            "browserTarget": "prevenirWeb:build"
           }
         },
         "test": {
@@ -91,7 +93,9 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/angular.js"
+            ]
           }
         },
         "lint": {
@@ -111,15 +115,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "prevenirWeb2:serve"
+            "devServerTarget": "prevenirWeb:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "prevenirWeb2:serve:production"
+              "devServerTarget": "prevenirWeb:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "prevenirWeb2"
+  "defaultProject": "prevenirWeb"
 }

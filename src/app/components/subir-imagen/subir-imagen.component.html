@@ -1,0 +1,52 @@
+<div class="titulo">
+        Subir Imagenes a galeria
+    </div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 offset-md-3" style="padding-top:50px;">
+
+            <h3>Fotografias a subir</h3>
+            <form [formGroup]="datosImagen" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <input type="file" formControlName="txtImg" (change)="onUploadChange($event)"
+                        accept=".png, .jpg, .jpeg" name="image" multiple />
+                </div>
+                <div class="form-group">
+                    <label for="" class="label-formulario-user">Seleccionar Tipo</label>
+                    <select name="" id="" class="form-control" formControlName="txtTipos">
+                        <option *ngFor="let t of tipos" value="{{t.id}}">{{t.nombre}}</option>
+                    </select>
+
+                </div>
+
+                <div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="estado === 'success'">
+                    {{statusText}}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
+                  <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="estado === 'error'">
+                    {{statusText}}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
+                <div class="form-group">
+                    <div class="row">
+
+                            <div class="col-md-3" *ngFor="let item of base64textString">
+                                <img width="100%" src={{item}} alt="" id="img">
+                                <!-- <button mat-icon-button (click)="removeSelectedFile(item)">delete</button> -->
+                            </div>
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary">Subir Imagenes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

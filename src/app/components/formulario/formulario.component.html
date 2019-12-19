@@ -1,0 +1,44 @@
+<form [formGroup]="datosUsuario" (ngSubmit)="prueba()">
+        <div class="row">
+                <div class="col-md-12">
+                        <div class="formGroup">
+                                <label class="">Nombres Completos</label>
+                                <input type="text" class="form-control" formControlName="txtNombre">
+                        </div>
+                </div>
+                <div class="col-md-12">
+                        <div class="formGroup">
+                                <label class="">Cédula</label>
+                                <input type="text" class="form-control" formControlName="txtCedula">
+                        </div>
+                </div>
+                <div class="col-md-12">
+                        <div class="formGroup">
+                                <label class="">Correo Electrónico:</label>
+                                <input type="text" class="form-control" formControlName="txtCorreo">
+                        </div>
+                </div>
+                <div class="col-md-12">
+                        <div class="formGroup">
+                                <label class="">Teléfono:</label>
+                                <input type="text" class="form-control" formControlName="txtTelefono">
+                        </div>
+                </div>
+
+                <div class="col-md-12">
+                        <div class="formGroup">
+                                <label class="">Asunto:</label>
+                                <input type="text" class="form-control" formControlName="txtAsunto">
+                        </div>
+                </div>
+                <div class="col-md-12">
+                        <div class="formGroup">
+                                <label class="">Mensaje:</label>
+                                <textarea name="txtMensaje" rows="5" class="form-control"
+                                        formControlName="txtMensaje"></textarea>
+                        </div>
+                </div>
+
+                <button type="submit" class="btn btn-outline-success">Enviar</button>
+        </div>
+</form>

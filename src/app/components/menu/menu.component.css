@@ -1,0 +1,190 @@
+p, li, ul{
+    text-align:justify;
+    padding-bottom: 10px;
+    font-size: 18px;
+}
+
+h1,h2,h3,h4,h5,h6{
+    color: #07A9DF;
+}
+a:hover{
+    color: #ffc705;
+    text-decoration: none;
+    
+}
+
+.jumbotron, .jumbotron-fluid
+{
+    padding: 2vw;
+}
+
+.tituloHorario{
+    font-size: 18px;
+    font-weight: bold;
+    color: #07A9DF;
+}
+
+.navSegundo{
+    padding:1vw;
+    text-align: center;
+}
+
+.menu{
+    color: black;
+    height: 100%;
+    font-size: 15px;
+    text-align: center;
+    margin-left:18px;
+}
+
+.footerNew{
+    background-color: #f8f9fa;
+}
+
+.contenido{
+
+    background-color: #f8f9fa;
+    padding: 2vw;
+}
+.contenidoBlanco{
+
+    background-color: white;
+    padding: 2vw;
+}
+
+.cuadroDiscontinuo{
+	border: 2px solid #fac502;
+    border-style: dashed;
+    border-radius: 49px;
+    padding: 20px;
+
+}
+
+.contenido2{
+
+    background-color: #07A9DF;
+    padding: 2vw;
+}
+
+.tituloPrincipal{
+    color: #07A9DF;
+    font-weight: bold;
+    padding-bottom: 30px;
+}
+
+.cardTitulo{
+    background-color: #07A9DF;
+}
+.cartText{
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+
+.subtitulo{
+    color: #07A9DF;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+.btn-link:hover {
+    color: #ff9900 !important;
+    text-decoration: none !important;
+}
+
+.recuadro{
+    background-color: #07A9DF;
+    padding: 20px;
+    color: white !important;
+    text-align:center;
+}
+
+.imagen{
+	max-width: 50%;
+    width: 300px;
+    margin: auto;
+    display: block;
+}
+
+.carousel{
+	color: #07A9DF;
+    font-weight: bold;
+}
+.accordion>.card .card-header{
+	background: white;
+	text-align: center;
+}
+
+.sliderPalabras{
+   background-color: #07A9DF;
+   text-align: center;
+   font-size: 1,8vw;
+   color: white;
+   padding: 2vw;
+}
+.recuadro2{
+    background-color: #ffc107;
+    padding: 20px;
+    color: white !important;
+    text-align: center;
+}
+
+.menuItems{
+    color: #07A9DF;
+    font-weight: 400;
+    font-size: 17px;
+    
+}
+
+@media screen and (max-width: 960px) {
+.galery , .flotanteCompu{
+display:none;
+}
+}
+
+
+@media screen and (min-width: 960px) {
+.flotanteCircle{
+display:none;
+}
+}
+
+
+
+.botonFlotante{
+width:80px;
+height:80px;
+right:0;
+bottom:0;
+position:absolute;
+border:none;
+outline:none;
+background: transparent !important;
+}
+
+
+.botonF1{
+  width:80px;
+  height:80px;
+  border-radius:100%;
+  background:#07b0ef;
+  right:0;
+  bottom:0;
+  position:absolute;
+  /*margin-right:16px;
+  margin-bottom:16px;*/
+  border:none;
+  outline:none;
+  color:#FFF;
+  font-size:36px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+ /* transition:.3s;  */
+}
+/*span{
+  transition:.5s;  
+}*/
+
+
+
+

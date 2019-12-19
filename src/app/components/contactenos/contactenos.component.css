@@ -1,0 +1,16 @@
+.btn-outline-success{
+    color: #00aeef !important;
+    border-color: #00aeef !important;
+}
+
+.btn-outline-success:hover{
+    color: #ffffff !important;
+    background-color: #00aeef !important;
+    border-color: #00aeef !important;
+}
+
+.btn-outline-success:not(:disabled):not(.disabled).active, .btn-outline-success:not(:disabled):not(.disabled):active, .show>.btn-outline-success.dropdown-toggle{
+    color: #ffffff !important;
+    background-color: #00aeef !important;
+    border-color: #00aeef !important;
+}

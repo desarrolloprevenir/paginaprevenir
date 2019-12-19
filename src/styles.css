@@ -1,1 +1,84 @@
 /* You can add global styles to this file, and also import other style files */
+.rss {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+ }
+
+ p{
+    text-align: justify;
+ }
+
+ .rss li {
+    background: url("./assets/images/prevenir/pre.png") 0 2px no-repeat;
+    padding: 0px 0 10px 28px;
+    font-size: large;
+ }
+
+ .tituloPrincipal{
+   color: #07A9DF;
+   font-weight: bold;
+   padding-bottom: 30px;
+}
+
+h1,h2,h3,h4,h5,h6{
+   color: #07A9DF;
+}
+
+.cardTitulo {
+   background-color: #07A9DF;
+}
+.cartText{
+   color: white;
+   font-weight: bold;
+}
+
+.btn-link:hover{
+   text-decoration: none !important;
+   color: #ff9900 !important;
+}
+
+.contenido{
+   background-color: #f8f9fa;
+   padding: 2vw;
+}
+
+@media screen and (max-width: 960px) {
+   .galery , .flotanteCompu{
+   display:none;
+   }
+   }
+
+
+   @media screen and (min-width: 960px) {
+   .flotanteCircle{
+   display:none;
+   }
+   }
+
+   .botonFlotante{
+       width:80px;
+     height:80px;
+       right:0;
+     bottom:0;
+     position:absolute;
+     border:none;
+     outline:none;
+     background: transparent !important;
+   }
+
+   .contenedor{
+      width:90px;
+      height:240px;
+      position:fixed;
+      right:0px;
+      bottom:0px;
+      z-index: +1;
+      padding: 50px;
+    }
+
+    .btn-info {
+      color: #fff;
+      background-color: #00aeef !important;
+      border-color: #00aeef !important;
+    }

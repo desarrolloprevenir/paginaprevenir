@@ -1,0 +1,45 @@
+<app-menu></app-menu>
+<div class="row">
+  
+    <div class=col-md-12>
+      <img src="../assets/images/prevenir/familia.jpg" style="max-width: 100%; padding-top: 65px; width: 100%;">
+    </div>
+  
+  </div>
+  
+  
+  <div class="contenido">
+  
+  
+  <div class="row"> 
+      <div class=col-md-1></div>
+      <div class="col-md-10"> 
+        <h2 class="text-center tituloPrincipal">Obituarios</h2>
+      </div>
+      <div class=col-md-1></div>
+    </div>
+      
+   
+  
+    <div class="row">
+      <div class="col-md-1">
+      </div>
+      <div class="col-md-10">
+       
+        <div class="gallery" id="gallery">
+  
+          <!-- Grid column -->
+          <div class="mb-3 pics animation all 1" *ngFor="let i of fotografias | imagenes:tipo" >
+            <img class="img-fluid" [src]="url + i.ruta" alt="Prevenir Express Previsión Excequial">
+          </div>
+         
+  
+        </div>
+
+
+      </div>
+    </div>
+    <div class="col-md-1">
+    </div>
+  </div>
+<app-footer></app-footer>
