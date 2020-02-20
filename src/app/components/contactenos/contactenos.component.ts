@@ -66,7 +66,7 @@ console.log(respuesta.send);
         this.status = 'success';
         this.statusText = 'Datos de usuario guardados con exito';
         this.datosUsuario.reset();
-        
+
       }
     },(err) => {
       console.log(err);
@@ -75,7 +75,7 @@ console.log(respuesta.send);
       //document.getElementById('modal').click();
       return false;
     });
-    
+
   }
 
   getDepartamentos(){

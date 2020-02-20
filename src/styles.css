@@ -9,6 +9,16 @@
     text-align: justify;
  }
 
+ .active-navegacion {
+    /* background: #119ace; */
+    /* border: 1px solid #ffc107;
+    border-radius: 6px;
+    width: 300px;
+    padding: 6px; */
+    color: #ffc107 !important;
+    font-weight: bold;
+}
+
  .rss li {
     background: url("./assets/images/prevenir/pre.png") 0 2px no-repeat;
     padding: 0px 0 10px 28px;

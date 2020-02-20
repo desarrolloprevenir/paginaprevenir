@@ -14,25 +14,23 @@ import { from } from 'rxjs';
 import { SubirImagenComponent } from './components/subir-imagen/subir-imagen.component';
 import { LoginComponent } from './components/login/login.component';
 import { UserGuard } from './services/user.guard';
-import { OpticaComponent } from './components/optica/optica.component';
 import { FundacionComponent } from './components/fundacion/fundacion.component';
 
- 
+
 const routes: Routes = [
- {path: 'inicio', component:InicioComponent},
- {path: '', component:IndexComponent},
- {path: 'quienes-somos', component:QuienesSomosComponent},
- {path: 'planes', component:PlanesComponent},
- {path: 'galeria', component:GaleriaComponent},
- {path: 'obituario', component:ObituarioComponent},
- {path: 'contactenos', component:ContactenosComponent},
- {path: 'terminos-condiciones', component:TerminosCondicionesComponent},
- {path: 'formulario', component:FormularioComponent},
- {path: 'index', component:IndexComponent},
- {path: 'subirImagen', component:SubirImagenComponent, canActivate: [UserGuard]},
- {path: 'login', component:LoginComponent},
- {path: 'optica', component:OpticaComponent},
- {path: 'fundacion', component:FundacionComponent}
+ {path: 'inicio', component : InicioComponent},
+ {path: '', component : IndexComponent},
+ {path: 'quienes-somos', component : QuienesSomosComponent},
+ {path: 'planes', component : PlanesComponent},
+ {path: 'galeria', component : GaleriaComponent},
+ {path: 'obituario', component : ObituarioComponent},
+ {path: 'contactenos', component : ContactenosComponent},
+ {path: 'terminos-condiciones', component : TerminosCondicionesComponent},
+ {path: 'formulario', component : FormularioComponent},
+ {path: 'index', component : IndexComponent},
+ {path: 'subirImagen', component : SubirImagenComponent, canActivate: [UserGuard]},
+ {path: 'login', component : LoginComponent},
+ {path: 'fundacion', component : FundacionComponent}
 ];
 
 @NgModule({

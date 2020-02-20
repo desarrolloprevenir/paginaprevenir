@@ -24,9 +24,9 @@ import { SubirImagenComponent } from './components/subir-imagen/subir-imagen.com
 import { LoginComponent } from './components/login/login.component';
 import { UserService } from './user/user.service';
 import { UserGuard } from './services/user.guard';
-import { OpticaComponent } from './components/optica/optica.component';
 import { FundacionComponent } from './components/fundacion/fundacion.component';
 import { GaleryComponent } from './components/galery/galery.component';
+
 
 
 @NgModule({
@@ -46,9 +46,8 @@ import { GaleryComponent } from './components/galery/galery.component';
     ImagenesPipe,
     SubirImagenComponent,
     LoginComponent,
-    OpticaComponent,
     FundacionComponent,
-    GaleryComponent
+    GaleryComponent,
   ],
   imports: [
     BrowserModule,
