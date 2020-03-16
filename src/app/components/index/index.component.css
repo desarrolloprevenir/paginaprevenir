@@ -289,6 +289,24 @@ h2{
 
 
 .fondo{
+  /* background: rgba(237,170,0,1);
+  background: -moz-linear-gradient(top, rgba(237,170,0,1) 0%, rgba(243,198,84,1) 25%, rgba(250,229,178,1) 53%, rgba(255,255,255,1) 76%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(237,170,0,1)), color-stop(25%, rgba(243,198,84,1)), color-stop(53%, rgba(250,229,178,1)), color-stop(76%, rgba(255,255,255,1)));
+  background: -webkit-linear-gradient(top, rgba(237,170,0,1) 0%, rgba(243,198,84,1) 25%, rgba(250,229,178,1) 53%, rgba(255,255,255,1) 76%);
+  background: -o-linear-gradient(top, rgba(237,170,0,1) 0%, rgba(243,198,84,1) 25%, rgba(250,229,178,1) 53%, rgba(255,255,255,1) 76%);
+  background: -ms-linear-gradient(top, rgba(237,170,0,1) 0%, rgba(243,198,84,1) 25%, rgba(250,229,178,1) 53%, rgba(255,255,255,1) 76%);
+  background: linear-gradient(to bottom, rgba(237,170,0,1) 0%, rgba(243,198,84,1) 25%, rgba(250,229,178,1) 53%, rgba(255,255,255,1) 76%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#edaa00', endColorstr='#ffffff', GradientType=0 ); */
+  background-repeat: no-repeat;
+  background: url(../../../assets/fondoPrevenir.png) no-repeat center center fixed;
+  background-size: 100%;
+  /* padding-top:3vw; */
+  height: 1080px;
+  width: 100%;
+
+}
+
+.fondoMovil{
   background: rgba(237,170,0,1);
   background: -moz-linear-gradient(top, rgba(237,170,0,1) 0%, rgba(243,198,84,1) 25%, rgba(250,229,178,1) 53%, rgba(255,255,255,1) 76%);
   background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(237,170,0,1)), color-stop(25%, rgba(243,198,84,1)), color-stop(53%, rgba(250,229,178,1)), color-stop(76%, rgba(255,255,255,1)));

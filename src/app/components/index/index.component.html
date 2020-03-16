@@ -18,51 +18,75 @@
         src="https://www.facebook.com/tr?id=139031563597380&ev=PageView&noscript=1" /></noscript>
 <!-- End Facebook Pixel Code -->
 
-<div class="fondo">
+<div class="fondo bannerGrande">
     <div class="container">
         <div class="row">
-
-
-
-            <div class="col-md-12">
-                <img style="display: block; margin: auto; margin-top: 50px" src="./assets/images/prevenir/logo.png" />
-            </div>
+            <!-- <div class="col-md-12">
+                <img style="display: block; margin: auto; padding: 50px 0 50px 0" src="./assets/images/prevenir/logo.png" />
+            </div> -->
 
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <h2 class="text-center" style="padding: 5% 0 0 0">Unidades de Negocios del grupo Prevenir Express</h2>
+        <div class="row" style="padding: 50px 0 50px 0">
+            <div class="col-md-12" style="background-color: #7d8b6a;">
+                <h2 class="text-center" style="padding: 2% 0 2% 0">Unidades de Negocios del grupo Prevenir Express</h2>
             </div>
         </div>
+<br>
+        <div class="row " style="padding: 0 0 5% 0; text-align:center; margin: auto;" >
 
-        <div class="row bannerGrande" style="padding: 0 0 5% 0; text-align:center; margin: auto;" >
 
-                <div class="col-md-1"></div>
-                <div class="col-md-10">
+                <div class="col-md-12">
                   <div class="row">
 
-                        <div class="col-md-3">
-                            <button class="btn btn-info w-100" (click)="prevenirFundacion()" style="margin: 10px;">Previsión Funeraria</button>
+                        <div class="col-md-3" (click)="prevenirFundacion()" style="cursor: pointer;" >
+
+                            <div class="card" style="width: 15rem; border: 2px  dotted #ececec;  background: #f7ffeb94;">
+                              <img class="card-img-top w-80" style="width: 200px" src="../../../assets/images/prevenir/circulo1.png" alt="Card image cap">
+                              <div class="card-body">
+                                <button class="btn btn-info w-100" (click)="prevenirFundacion()">Previsión Funeraria</button>
+                              </div>
+                            </div>
+
+                          </div>
+                          <div class="col-md-3" style="cursor: pointer;"><a href="http://citas.prevenirexpress.com/">
+                        <div class="card" style="width: 15rem; background: #f7ffeb94; border: 2px  dotted #ececec;">
+                          <img class="card-img-top w-80" style="width: 200px" src="../../../assets/images/prevenir/circulo2.png" alt="Card image cap">
+                          <div class="card-body">
+                            <a href="http://citas.prevenirexpress.com/">   <button class="btn btn-info w-100" >Descuentos Médicos</button></a>
+                          </div>
                         </div>
-                       <div class="col-md-3">
-                          <a href="http://citas.prevenirexpress.com/">   <button class="btn btn-info w-100" style="margin: 10px;">Descuentos Médicos</button></a>
+                      </a>
                        </div>
-                       <div class="col-md-3">
-                        <a href="http://optica.prevenirexpress.com/">   <button class="btn btn-info w-100" style="margin: 10px;">Prevenir Óptica</button></a>
+
+                        <div class="col-md-3" style="cursor: pointer;">
+                          <a href="http://optica.prevenirexpress.com/">
+                        <div class="card" style="width: 15rem; background: #f7ffeb94; border: 2px dotted #ececec;">
+                          <img class="card-img-top w-80" style="width: 200px" src="../../../assets/images/prevenir/circulo3.png" alt="Card image cap">
+                          <div class="card-body">
+                            <a href="http://optica.prevenirexpress.com/">   <button class="btn btn-info w-100" >Prevenir Óptica</button></a>
+                          </div>
+                        </div>
+                      </a>
                      </div>
                     <!-- <div class="col-md-3">
                         <button (click)="optica()" class="btn btn-info w-100" style="margin: 10px;">Prevenir Óptica</button>
                     </div> -->
-                    <div class="col-md-3">
-                        <button (click)="optica()" class="btn btn-info w-100" style="margin: 10px;">Prevenir Fundación</button>
-                    </div>
+                    <div class="col-md-3" (click)="optica()" style="cursor: pointer;">
+
+                        <div class="card" style=" width: 15rem;  background: #f7ffeb94; border: 2px dotted #ececec;">
+                          <img class="card-img-top " style="width: 200px" src="../../../assets/images/prevenir/circulo4.png" alt="Card image cap">
+                          <div class="card-body">
+                            <button (click)="optica()" class="btn btn-info w-100" >Prevenir Fundación</button>
+                          </div>
+                        </div>
+                      </div>
 
                   </div>
 
 
 
                 </div>
-                <div class="col-md-1"></div>
+
 
         </div>
 
@@ -90,7 +114,7 @@
                     </div>
                 </figure> -->
 
-                <div id="carouselExampleControls" style="width: 500px; display: block; margin: auto;" class="carousel slide" data-ride="carousel">
+                <!-- <div id="carouselExampleControls" style="width: 500px; display: block; margin: auto;" class="carousel slide" data-ride="carousel">
                   <div class="carousel-inner">
                     <div (click)="prevenirFundacion()" style="cursor: pointer;" class="carousel-item active">
                       <img class="d-block w-100" src="../../../assets/img/indexGalery/sliderPrevenirPrexequial2.png" alt="First slide">
@@ -113,7 +137,7 @@
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                   </a>
-                </div>
+                </div> -->
 
             </div>
         </div>
@@ -121,37 +145,44 @@
 
     </div>
 
-    <div class="row movil" style="margin-top: 50px">
 
 
-            <div class="col-md-4" style="margin: 30px">
+</div>
+<div class="row movil fondoMovil">
 
-                    <div class="jumbotron" (click)="prevenirFundacion()" style="cursor: pointer;">
-                        <img src="../../../assets/images/prevenir/circulo1.png" width="70%">
-                        <h2 style="font-size: xx-large;">Previsión Exequial</h2>
-                    </div>
+  <div class="row" style="padding: 50px 0 50px 0">
+    <div class="col-md-12">
+      <img style="display: block; margin: auto; padding: 50px 0 50px 0" src="./assets/images/prevenir/logo.png" />
+  </div>
+        <h2 class="text-center" style="padding: 2% 0 2% 0">Unidades de Negocios del grupo Prevenir Express</h2>
 
-            </div>
+</div>
+  <div class="col-md-4" style="margin: 30px">
 
-            <div class="col-md-4" style="margin: 30px">
+          <div class="jumbotron" (click)="prevenirFundacion()" style="cursor: pointer;">
+              <img src="../../../assets/images/prevenir/circulo1.png" width="70%">
+              <h2 style="font-size: xx-large;">Previsión Exequial</h2>
+          </div>
 
-                    <div class="jumbotron" (click)="optica()" style="cursor: pointer;">
-                        <img src="../../../assets/images/prevenir/circulo3.png" width="70%">
-                        <h2 style="font-size: xx-large;">Prevenir Óptica</h2>
-                    </div>
+  </div>
 
-            </div>
+  <div class="col-md-4" style="margin: 30px">
 
-            <div class="col-md-4" style="margin: 30px">
+          <div class="jumbotron" (click)="optica()" style="cursor: pointer;">
+              <img src="../../../assets/images/prevenir/circulo3.png" width="70%">
+              <h2 style="font-size: xx-large;">Prevenir Óptica</h2>
+          </div>
 
-                    <div class="jumbotron" (click)="optica()">
-                        <img src="../../../assets/images/prevenir/circulo4.png" width="70%">
-                        <h2 style="font-size: xx-large;">Prevenir Fundación</h2>
-                    </div>
+  </div>
 
-            </div>
+  <div class="col-md-4" style="margin: 30px">
 
+          <div class="jumbotron" (click)="optica()">
+              <img src="../../../assets/images/prevenir/circulo4.png" width="70%">
+              <h2 style="font-size: xx-large;">Prevenir Fundación</h2>
+          </div>
 
-    </div>
+  </div>
+
 
 </div>
