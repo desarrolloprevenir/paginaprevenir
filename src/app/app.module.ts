@@ -26,6 +26,7 @@ import { UserService } from './user/user.service';
 import { UserGuard } from './services/user.guard';
 import { FundacionComponent } from './components/fundacion/fundacion.component';
 import { GaleryComponent } from './components/galery/galery.component';
+import { FormularioIncripcionComponent } from './components/formulario-incripcion/formulario-incripcion.component';
 
 
 
@@ -48,6 +49,7 @@ import { GaleryComponent } from './components/galery/galery.component';
     LoginComponent,
     FundacionComponent,
     GaleryComponent,
+    FormularioIncripcionComponent,
   ],
   imports: [
     BrowserModule,

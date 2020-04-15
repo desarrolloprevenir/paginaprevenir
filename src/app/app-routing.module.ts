@@ -15,6 +15,9 @@ import { SubirImagenComponent } from './components/subir-imagen/subir-imagen.com
 import { LoginComponent } from './components/login/login.component';
 import { UserGuard } from './services/user.guard';
 import { FundacionComponent } from './components/fundacion/fundacion.component';
+import { FormularioIncripcionComponent } from './components/formulario-incripcion/formulario-incripcion.component';
+
+// formulario component
 
 
 const routes: Routes = [
@@ -28,9 +31,11 @@ const routes: Routes = [
  {path: 'terminos-condiciones', component : TerminosCondicionesComponent},
  {path: 'formulario', component : FormularioComponent},
  {path: 'index', component : IndexComponent},
+ {path: 'formulario-inscripcion', component : FormularioIncripcionComponent},
  {path: 'subirImagen', component : SubirImagenComponent, canActivate: [UserGuard]},
  {path: 'login', component : LoginComponent},
- {path: 'fundacion', component : FundacionComponent}
+ {path: 'fundacion', component : FundacionComponent},
+ {path: '**', component : InicioComponent}
 ];
 
 @NgModule({
