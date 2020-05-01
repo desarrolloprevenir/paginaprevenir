@@ -24,27 +24,29 @@ export class AppService {
    }
 
 
-   postFormulario(info){
-    let headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.post(apiUrl + '/emails', info, { headers: headers });
+   postFormulario(info) {
+    return this.http.post(apiUrl + '/emails', info, { headers });
    }
 
-   postFotos(fotos){
-    let headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.post(apiUrl + '/fotosp', fotos, { headers: headers })
+   postFotos(fotos) {
+    return this.http.post(apiUrl + '/fotosp', fotos, { headers });
    }
 
-   getDepartamentos(){
+   getDepartamentos() {
      return this.http.get(apiUrl + '/departamentos/47', {headers});
    }
 
-   getMunicipios(id){
+   getMunicipios(id) {
     return this.http.get(apiUrl + '/municipios/' + id);
   }
 
-  getFotos(){
-    let headers = new HttpHeaders().set('Content-Type', 'application/json');
+  getFotos() {
     return this.http.get(apiUrl + '/verfotof');
+  }
+
+  // Ruta para obtener los parentescos que puede tener un beneficiario
+  getParentesco() {
+    return this.http.get(apiUrl + '/parent', {headers});
   }
 
 

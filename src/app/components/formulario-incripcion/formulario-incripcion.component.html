@@ -1,59 +1,88 @@
 <!-- <app-menu></app-menu> -->
 
-<div class="container">
+<div #contenedor id="contenedor" class="container">
     <div class="text-center">
         <h4 class="display-4">Formulario de inscripción</h4>
     </div>
 
+    <!-- // BTN OCULTO PARA SCROLL -->
+    <button id="btn-scroll" style="display: none;" (click)="scroll()"></button>
+
+
     <div class="row" style="margin-top: 50px;">
+
+        <!-- ----------------------------------------------------------------------------------------------------- -->
+        <!-- -------------------------------------------- FORMULARIO TITULAR ------------------------------------- -->
+        <!-- ----------------------------------------------------------------------------------------------------- -->
+
         <div class="col-7">
-            <form>
+
+
+            <div class="alert alert-danger alert-dismissible fade show container" role="alert" *ngIf="status === 'error'">
+                {{statusText}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="cerrarAlerta()">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <form [formGroup]="formTitular">
                 <div class="row">
                     <div class="col">
                         <label class="form-label">Nombres</label>
-                        <input type="text" class="form-control" placeholder="Nombres">
+                        <input type="text" class="form-control" formControlName="nombres" placeholder="Nombres" [class.is-invalid]="(formTitular.get('nombres').errors && formTitular.get('nombres').touched) ||
+                                                                                                                                    (formTitular.get('nombres').errors) && (formTitular.invalid && (validarFormulario === 'invalido' )) ">
                     </div>
                     <div class="col">
                         <label class="form-label">Apellidos</label>
-                        <input type="text" class="form-control" placeholder="Apellidos">
+                        <input type="text" class="form-control" formControlName="apellidos" placeholder="Apellidos" [class.is-invalid]="(formTitular.get('apellidos').errors && formTitular.get('apellidos').touched) ||
+                                                                                                                                        (formTitular.get('nombres').errors) && (formTitular.invalid && (validarFormulario === 'invalido' ))">
                     </div>
                 </div>
 
                 <div class="row" style="padding-top: 15px;">
                     <div class="col">
                         <label class="form-label">tipo Documento</label>
-                        <select class="form-control">
-                            <option>C.C</option>
+                        <select class="form-control" formControlName="tipoDocumento" [class.is-invalid]="(formTitular.get('tipoDocumento').errors && formTitular.get('tipoDocumento').touched) ||
+                                                                                                         (formTitular.get('tipoDocumento').errors) && (formTitular.invalid && (validarFormulario === 'invalido' )) ">
+                            <option value="CC">Cédula de Ciudadanía</option>
+                            <option value="CE">Cédula de Extranjería</option>
+                            <option value="PA">Pasaporte</option>
+                            <option value="RC">Registro Civil</option>
+                            <option value="TI">Tarjeta de Identidad</option>
                         </select>
                     </div>
                     <div class="col">
                         <label class="form-label">Numero de documento</label>
-                        <input type="text" class="form-control" placeholder="No. de identificación.">
+                        <input type="text" class="form-control" formControlName="numeroIdentificacion" placeholder="No. de identificación." [class.is-invalid]="(formTitular.get('numeroIdentificacion').errors && formTitular.get('numeroIdentificacion').touched) ||
+                                                                                                                                                                (formTitular.get('numeroIdentificacion').errors) && (formTitular.invalid && (validarFormulario === 'invalido' )) ">
                     </div>
                 </div>
 
                 <div class="row" style="padding-top: 15px;">
                     <div class="col">
                         <label class="form-label">Correo electronico</label>
-                        <input type="text" class="form-control" placeholder="ejemplo@email.com">
+                        <input type="text" class="form-control" formControlName="email" placeholder="ejemplo@email.com" [class.is-invalid]="(formTitular.get('email').errors && formTitular.get('email').touched) ||
+                                                                                                                                            (formTitular.get('email').errors) && (formTitular.invalid && (validarFormulario === 'invalido' )) ">
                     </div>
                     <div class="col">
                         <label class="form-label">Número de celular</label>
-                        <input type="text" class="form-control" placeholder="No. de contacto.">
+                        <input type="text" class="form-control" formControlName="numeroCelular" placeholder="No. de contacto." [class.is-invalid]="(formTitular.get('numeroCelular').errors && formTitular.get('numeroCelular').touched) ||
+                                                                                                                                                   (formTitular.get('numeroCelular').errors) && (formTitular.invalid && (validarFormulario === 'invalido' )) ">
                     </div>
                 </div>
 
                 <div class="row" style="padding-top: 15px;">
                     <div class="col">
                         <label class="form-label">Departamento</label>
-                        <select class="form-control">
-                            <option>Nariño</option>
+                        <select class="form-control" [formControl]="departamento">
+                            <option *ngFor="let d of departamentos" [value]="d.id_departamento">{{d.nombre}}</option>
                         </select>
                     </div>
                     <div class="col">
                         <label class="form-label">Ciudad</label>
-                        <select class="form-control">
-                            <option>Pasto</option>
+                        <select class="form-control" formControlName="municipio" [class.is-invalid]="(formTitular.get('municipio').errors && formTitular.get('municipio').touched) ||
+                                                                                                     (formTitular.get('municipio').errors) && (formTitular.invalid && (validarFormulario === 'invalido' )) ">
+                            <option *ngFor="let m of municipios" [value]="m.id_municipio">{{m.nombre}}</option>
                         </select>
                     </div>
                 </div>
@@ -61,43 +90,132 @@
                 <div class="row" style="padding-top: 15px;">
                     <div class="col">
                         <label class="form-label">Direccion</label>
-                        <input type="text" class="form-control" placeholder="Dirección">
+                        <input type="text" class="form-control" formControlName="direccion" placeholder="Dirección" [class.is-invalid]="(formTitular.get('direccion').errors && formTitular.get('direccion').touched) ||
+                                                                                                                                        (formTitular.get('direccion').errors) && (formTitular.invalid && (validarFormulario === 'invalido' )) ">
                     </div>
 
                     <div class="col">
                         <label class="form-label">Barrio</label>
-                        <input type="text" class="form-control" placeholder="Barrio">
+                        <input type="text" class="form-control" formControlName="barrio" placeholder="Barrio" [class.is-invalid]="(formTitular.get('barrio').errors && formTitular.get('barrio').touched) ||
+                                                                                                                                  (formTitular.get('barrio').errors) && (formTitular.invalid && (validarFormulario === 'invalido' )) ">
                     </div>
                 </div>
 
                 <div class="row" style="padding-top: 15px;">
                     <div class="col">
                         <label class="form-label">Profesión</label>
-                        <input type="text" class="form-control" placeholder="Profesión">
+                        <input type="text" class="form-control" formControlName="profesion" placeholder="Profesión">
                     </div>
 
                     <div class="col">
                         <label class="form-label">Empresa donde labora</label>
-                        <input type="text" class="form-control" placeholder="Empresa donde labora">
+                        <input type="text" class="form-control" formControlName="empresaDondeLabora" placeholder="Empresa donde labora">
                     </div>
                 </div>
             </form>
 
+
+
+            <!-- ----------------------------------------------------------------------------------------------------- -->
+            <!-- ----------------------------------------- FORMULARIOS BNEFICIARIO ----------------------------------- -->
+            <!-- ----------------------------------------------------------------------------------------------------- -->
+
+            <div *ngIf="formsBeneficiario.length >= 1">
+
+                <div *ngFor="let fb of formsBeneficiario; let i = index">
+
+                    <div class="row" style="margin-top: 40px;">
+
+                        <div class="col-8  text-left">
+                            <h3 class="card-title">Formulario beneficiario No. {{i + 1}}</h3>
+                        </div>
+                        <div class="col-4 text-right">
+                            <button class="btn btn-danger" (click)="eliminarFormulario(i)">X</button>
+                        </div>
+
+                    </div>
+
+                    <form style="margin-top: 30px;">
+                        <div class="row">
+                            <div class="col">
+                                <label class="form-label">Nombres</label>
+                                <input type="text" [id]="'nombres' + i" class="form-control" placeholder="Nombres" pattern="[A-Z a-z ñ]*" (keypress)="cambioHtml($event, 'nombre', i)" required>
+                                <p [id]="'textn' + i" style="color: red; font-size: 13px; display: none;">* Esta campo es requerido.</p>
+                                <p [id]="'textno' + i" style="color: red; font-size: 13px; display: none;">* Esta campo solo acepta letras.</p>
+                            </div>
+                            <div class="col">
+                                <label class="form-label">Apellidos</label>
+                                <input type="text" [id]="'apellidos' + i" class="form-control" placeholder="Apellidos" pattern="('[A-Z a-z ñ]*')" (keypress)="cambioHtml($event, 'apellido', i)" required>
+                                <p [id]="'texta' + i" style="color: red; font-size: 13px; display: none;">* Esta campo es requerido.</p>
+                                <p [id]="'textap' + i" style="color: red; font-size: 13px; display: none;">* Esta campo solo acepta letras.</p>
+                            </div>
+                        </div>
+
+                        <div class="row" style="padding-top: 15px;">
+                            <div class="col">
+                                <label class="form-label">tipo Documento</label>
+                                <select class="form-control" [id]="'tipoDocumento' + i" (change)="cambioHtml($event, 'tipoDocumento', i)">
+                                    <option disabled></option>
+                                    <option value="CC">Cédula de Ciudadanía</option>
+                                    <option value="CE">Cédula de Extranjería</option>
+                                    <option value="PA">Pasaporte</option>
+                                    <option value="RC">Registro Civil</option>
+                                    <option value="TI">Tarjeta de Identidad</option>
+                                </select>
+                                <p [id]="'texttdo' + i" style="color: red; font-size: 13px; display: none;">* Esta campo es requerido.</p>
+                            </div>
+                            <div class="col">
+                                <label class="form-label">Patentesco</label>
+                                <select class="form-control" [id]="'parentesco' + i" (change)="cambioHtml($event, 'parentesco', i)">
+                                        <option disabled></option>
+                                        <option *ngFor="let p of parentescos" [value]="p.id_parentescos">{{p.nombre}}</option>
+                                </select>
+                                <p [id]="'textpa' + i" style="color: red; font-size: 13px; display: none;">* Esta campo es requerido.</p>
+                            </div>
+                        </div>
+
+                        <div class="row" style="padding-top: 15px;">
+                            <div class="col">
+                                <label class="form-label">Numero de documento</label>
+                                <input type="number" class="form-control" min="0" placeholder="No. de identificación." [id]="'numeroDocumento' + i" (keypress)="cambioHtml($event, 'numeroDocumento', i)">
+                                <p [id]="'textnd' + i" style="color: red; font-size: 13px; display: none;">* Esta campo es requerido.</p>
+                                <p [id]="'textndo' + i" style="color: red; font-size: 13px; display: none;">* Número invalido.</p>
+                            </div>
+                            <div class="col">
+                                <label class="form-label">Fecha nacimiento</label>
+                                <input type="date" class="form-control" [max]="today" placeholder="No. de identificación." [id]="'fechaNacimiento' + i" (change)="cambioHtml($event, 'fechaNacimiento', i)">
+                                <p [id]="'textfn' + i" style="color: red; font-size: 13px; display: none;">* Esta campo es requerido.</p>
+                            </div>
+                            <div class="col">
+                                <label class="form-label">Numero de Celular o Contacto</label>
+                                <input type="number" class="form-control" min="0" placeholder="No. de identificación." [id]="'numeroCelular' + i" (keypress)="cambioHtml($event, 'numeroCelular', i)">
+                                <p [id]="'textnc' + i" style="color: red; font-size: 13px; display: none;">* Esta campo es requerido.</p>
+                                <p [id]="'textnce' + i" style="color: red; font-size: 13px; display: none;">* Número invalido.</p>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+
+            <!-- ----------------------------------------------------------------------------------------------------- -->
+            <!-- ----------------------------------------- BTN AGREGAR BNEFICIARIO ----------------------------------- -->
+            <!-- ----------------------------------------------------------------------------------------------------- -->
+
             <div class="text-center" style="padding-top: 30px;">
-                <button class="btn btn-primary">Agregar Beneficiario</button>
+                <button class="btn btn-primary" (click)="agregarBeneficiario()">Agregar Beneficiario</button>
+                <button class="btn btn-primary" style="margin-left: 5px;" (click)="generarRecibo()">Generar recibo</button>
             </div>
         </div>
 
         <div class="col-5">
-            <div class="row">
-                <div class="col-1"></div>
-                <div class="col-10">
-                    <div class="text-center"><img style="max-height: 400px" src="../../../assets/publicidad2.png" alt=""></div>
-                </div>
-                <div class="col-1"></div>
-            </div>
+
 
             <div class="row">
+                <!-- ----------------------------------------------------------------------------------------------------- -->
+                <!-- ------------------------------------------ CARD VALOR SUSCRIPCION ----------------------------------- -->
+                <!-- ----------------------------------------------------------------------------------------------------- -->
                 <div class="col-1"></div>
                 <div class="col-10">
                     <div class="carta" style="padding-top: 15px;">
@@ -109,28 +227,28 @@
                                     <div class="col-8">
                                         <p>Valor suscripcion por año</p>
                                     </div>
-                                    <div class="col-4 text-right">20 lks</div>
+                                    <div class="col-4 text-right">$ {{valorSuscripcionTitular}}</div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-8">
                                         <p>Número de beneficiarios</p>
                                     </div>
-                                    <div class="col-4 text-right">2</div>
+                                    <div class="col-4 text-right">{{formsBeneficiario.length}}</div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-8">
                                         <p>Total beneficiarios</p>
                                     </div>
-                                    <div class="col-4 text-right">40 lks</div>
+                                    <div class="col-4 text-right">$ {{valorSuscripcionBeneficiario * formsBeneficiario.length}}</div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-8">
                                         <h5>Total</h5>
                                     </div>
-                                    <div class="col-4 text-right">60 lks</div>
+                                    <div class="col-4 text-right">$ {{(valorSuscripcionBeneficiario * formsBeneficiario.length) + valorSuscripcionTitular}}</div>
                                 </div>
 
                                 <div class="card-header"></div>
@@ -143,6 +261,21 @@
                 </div>
                 <div class="col-1"></div>
             </div>
+
+
+            <!-- <div class="row">
+                <div class="col-1"></div>
+                <div class="col-10"> -->
+            <!-- ----------------------------------------------------------------------------------------------------- -->
+            <!-- -------------------------------------------- IMAGEN PUBLICIDAD -------------------------------------- -->
+            <!-- ----------------------------------------------------------------------------------------------------- -->
+            <!-- <div class="text-center"><img style="max-height: 400px" src="../../../assets/publicidad2.png" alt=""></div>
+                </div>
+                <div class="col-1"></div>
+            </div> -->
+
         </div>
     </div>
 </div>
+
+<app-footer></app-footer>
