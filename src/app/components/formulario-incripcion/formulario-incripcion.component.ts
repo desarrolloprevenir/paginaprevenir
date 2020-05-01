@@ -45,11 +45,11 @@ export class FormularioIncripcionComponent implements OnInit {
   inicializarFormulario() {
       this.formTitular = this.fb.group({
 
-        nombres : ['', [Validators.required, Validators.pattern('[A-Z a-z ñ]*')]],
-        apellidos : ['', [Validators.required, Validators.pattern('[A-Z a-z ñ]*')]],
+        nombres : ['', [Validators.required, Validators.minLength(3), Validators.pattern('[A-Z a-z ñ]*')]],
+        apellidos : ['', [Validators.required, Validators.minLength(3), Validators.pattern('[A-Z a-z ñ]*')]],
         tipoDocumento : ['', [Validators.required]],
         numeroIdentificacion : ['', [Validators.required, Validators.pattern('[0-9]*')]],
-        email : ['', [Validators.required]],
+        email : ['', [Validators.required, Validators.email, Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]],
         numeroCelular : ['', [Validators.required, Validators.pattern('[0-9]*')]],
         municipio : ['', [Validators.required]],
         direccion : ['', [Validators.required]],

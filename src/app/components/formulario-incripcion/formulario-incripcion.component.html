@@ -27,19 +27,41 @@
 
             <form [formGroup]="formTitular">
                 <div class="row">
+
+                    <!-- ----------------------------------------- NOMBRES -------------------------------------- -->
+
                     <div class="col">
                         <label class="form-label">Nombres</label>
-                        <input type="text" class="form-control" formControlName="nombres" placeholder="Nombres" [class.is-invalid]="(formTitular.get('nombres').errors && formTitular.get('nombres').touched) ||
+                        <input type="text" class="form-control" formControlName="nombres" maxlength="30" placeholder="Nombres" [class.is-invalid]="(formTitular.get('nombres').errors && formTitular.get('nombres').touched) ||
                                                                                                                                     (formTitular.get('nombres').errors) && (formTitular.invalid && (validarFormulario === 'invalido' )) ">
+
+
+                        <!-- ----------------------------------- VALIDACION NOMBRES ----------------------------- -->
+                        <div>
+                            <p style="color: red; font-size: 13px" *ngIf="formTitular.get('nombres').getError('required') && formTitular.get('nombres').touched">* Esta campo es requerido.</p>
+                            <p style="color: red; font-size: 13px" *ngIf="formTitular.get('nombres').getError('pattern') && formTitular.get('nombres').touched">* Esta campo solo acepta letras, sin caracteres especiales.</p>
+                            <p style="color: red; font-size: 13px" *ngIf="formTitular.get('nombres').getError('minlength') && formTitular.get('nombres').touched">* Cantidad minima de caracteres (3).</p>
+                        </div>
+
                     </div>
+
+                    <!-- ----------------------------------------- APELLIDOS -------------------------------------- -->
                     <div class="col">
                         <label class="form-label">Apellidos</label>
                         <input type="text" class="form-control" formControlName="apellidos" placeholder="Apellidos" [class.is-invalid]="(formTitular.get('apellidos').errors && formTitular.get('apellidos').touched) ||
                                                                                                                                         (formTitular.get('nombres').errors) && (formTitular.invalid && (validarFormulario === 'invalido' ))">
+
+                        <!-- ----------------------------------- VALIDACION APELLIDOS ----------------------------- -->
+                        <div>
+                            <p style="color: red; font-size: 13px" *ngIf="formTitular.get('apellidos').getError('required') && formTitular.get('apellidos').touched">* Esta campo es requerido.</p>
+                            <p style="color: red; font-size: 13px" *ngIf="formTitular.get('apellidos').getError('pattern') && formTitular.get('apellidos').touched">* Esta campo solo acepta letras, sin caracteres especiales.</p>
+                            <p style="color: red; font-size: 13px" *ngIf="formTitular.get('apellidos').getError('minlength') && formTitular.get('apellidos').touched">* Cantidad minima de caracteres (3).</p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="row" style="padding-top: 15px;">
+                    <!-- ----------------------------------------- TIPO DOCUMENTO -------------------------------------- -->
                     <div class="col">
                         <label class="form-label">tipo Documento</label>
                         <select class="form-control" formControlName="tipoDocumento" [class.is-invalid]="(formTitular.get('tipoDocumento').errors && formTitular.get('tipoDocumento').touched) ||
@@ -50,54 +72,106 @@
                             <option value="RC">Registro Civil</option>
                             <option value="TI">Tarjeta de Identidad</option>
                         </select>
+
+                        <!-- ----------------------------------------- TIPO DOCUMENTO VALIDACIONES -------------------------------------- -->
+                        <div>
+                            <p style="color: red; font-size: 13px" *ngIf="formTitular.get('tipoDocumento').getError('required') && formTitular.get('tipoDocumento').touched">* Esta campo es requerido.</p>
+                        </div>
                     </div>
+
+
+                    <!-- ----------------------------------------- NUMERO DOCUMENTO -------------------------------------- -->
                     <div class="col">
                         <label class="form-label">Numero de documento</label>
                         <input type="text" class="form-control" formControlName="numeroIdentificacion" placeholder="No. de identificación." [class.is-invalid]="(formTitular.get('numeroIdentificacion').errors && formTitular.get('numeroIdentificacion').touched) ||
                                                                                                                                                                 (formTitular.get('numeroIdentificacion').errors) && (formTitular.invalid && (validarFormulario === 'invalido' )) ">
+
+                        <!-- ----------------------------------------- TIPO DOCUMENTO VALIDACIONES -------------------------------------- -->
+                        <div>
+                            <p style="color: red; font-size: 13px" *ngIf="formTitular.get('numeroIdentificacion').getError('required') && formTitular.get('numeroIdentificacion').touched">* Esta campo es requerido.</p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="row" style="padding-top: 15px;">
+                    <!-- ----------------------------------------- EMAIL -------------------------------------- -->
                     <div class="col">
                         <label class="form-label">Correo electronico</label>
                         <input type="text" class="form-control" formControlName="email" placeholder="ejemplo@email.com" [class.is-invalid]="(formTitular.get('email').errors && formTitular.get('email').touched) ||
                                                                                                                                             (formTitular.get('email').errors) && (formTitular.invalid && (validarFormulario === 'invalido' )) ">
+
+                        <!-- ----------------------------------------- VALIDACIONES EMAIL -------------------------------------- -->
+                        <div>
+                            <p style="color: red; font-size: 13px" *ngIf="formTitular.get('email').getError('required') && formTitular.get('email').touched">* Esta campo es requerido.</p>
+                            <p style="color: red; font-size: 13px" *ngIf="formTitular.get('email').getError('email') && formTitular.get('email').touched ||
+                                                                            formTitular.get('email').getError('pattern') && formTitular.get('email').touched">* Correo electronico invalido.</p>
+                        </div>
                     </div>
+
+                    <!-- ----------------------------------------- NUMERO CELULAR -------------------------------------- -->
                     <div class="col">
                         <label class="form-label">Número de celular</label>
                         <input type="text" class="form-control" formControlName="numeroCelular" placeholder="No. de contacto." [class.is-invalid]="(formTitular.get('numeroCelular').errors && formTitular.get('numeroCelular').touched) ||
                                                                                                                                                    (formTitular.get('numeroCelular').errors) && (formTitular.invalid && (validarFormulario === 'invalido' )) ">
+
+                        <!-- ----------------------------------------- VALIDACIONES NUMERO CELULAR -------------------------------------- -->
+                        <div>
+                            <p style="color: red; font-size: 13px" *ngIf="formTitular.get('numeroCelular').getError('required') && formTitular.get('numeroCelular').touched">* Esta campo es requerido.</p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="row" style="padding-top: 15px;">
+                    <!-- ----------------------------------------- DEPARTAMENTO -------------------------------------- -->
                     <div class="col">
                         <label class="form-label">Departamento</label>
-                        <select class="form-control" [formControl]="departamento">
+                        <select class="form-control" [formControl]="departamento" [class.is-invalid]="departamento.getError('required') && departamento.touched">
                             <option *ngFor="let d of departamentos" [value]="d.id_departamento">{{d.nombre}}</option>
                         </select>
+                        <!-- ----------------------------------------- VALIDACIONES DEPARTAMENTO -------------------------------------- -->
+                        <div>
+                            <p style="color: red; font-size: 13px" *ngIf="departamento.getError('required') && departamento.touched">* Esta campo es requerido.</p>
+                        </div>
                     </div>
+
+                    <!-- ----------------------------------------- MUNICIPIO -------------------------------------- -->
                     <div class="col">
                         <label class="form-label">Ciudad</label>
                         <select class="form-control" formControlName="municipio" [class.is-invalid]="(formTitular.get('municipio').errors && formTitular.get('municipio').touched) ||
                                                                                                      (formTitular.get('municipio').errors) && (formTitular.invalid && (validarFormulario === 'invalido' )) ">
                             <option *ngFor="let m of municipios" [value]="m.id_municipio">{{m.nombre}}</option>
                         </select>
+
+                        <!-- ----------------------------------------- VALIDACIONES MUNICIPIO -------------------------------------- -->
+                        <div>
+                            <p style="color: red; font-size: 13px" *ngIf="formTitular.get('municipio').getError('required') && formTitular.get('municipio').touched">* Esta campo es requerido.</p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="row" style="padding-top: 15px;">
+                    <!-- ----------------------------------------- DIRECCION -------------------------------------- -->
                     <div class="col">
                         <label class="form-label">Direccion</label>
                         <input type="text" class="form-control" formControlName="direccion" placeholder="Dirección" [class.is-invalid]="(formTitular.get('direccion').errors && formTitular.get('direccion').touched) ||
                                                                                                                                         (formTitular.get('direccion').errors) && (formTitular.invalid && (validarFormulario === 'invalido' )) ">
+
+                        <!-- ----------------------------------------- VALIDACIONES DIRECCION  -------------------------------------- -->
+                        <div>
+                            <p style="color: red; font-size: 13px" *ngIf="formTitular.get('direccion').getError('required') && formTitular.get('direccion').touched">* Esta campo es requerido.</p>
+                        </div>
                     </div>
 
+                    <!-- ----------------------------------------- BARRRIO -------------------------------------- -->
                     <div class="col">
                         <label class="form-label">Barrio</label>
                         <input type="text" class="form-control" formControlName="barrio" placeholder="Barrio" [class.is-invalid]="(formTitular.get('barrio').errors && formTitular.get('barrio').touched) ||
                                                                                                                                   (formTitular.get('barrio').errors) && (formTitular.invalid && (validarFormulario === 'invalido' )) ">
+
+                        <!-- ----------------------------------------- VALIDACIONES BARRIO  -------------------------------------- -->
+                        <div>
+                            <p style="color: red; font-size: 13px" *ngIf="formTitular.get('barrio').getError('required') && formTitular.get('barrio').touched">* Esta campo es requerido.</p>
+                        </div>
                     </div>
                 </div>
 
