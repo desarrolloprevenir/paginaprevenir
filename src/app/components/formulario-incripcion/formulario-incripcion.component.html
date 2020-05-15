@@ -117,6 +117,7 @@
                         <!-- ----------------------------------------- VALIDACIONES NUMERO CELULAR -------------------------------------- -->
                         <div>
                             <p style="color: red; font-size: 13px" *ngIf="formTitular.get('numeroCelular').getError('required') && formTitular.get('numeroCelular').touched">* Esta campo es requerido.</p>
+                            <p style="color: red; font-size: 13px" *ngIf="formTitular.get('numeroCelular').getError('pattern') && formTitular.get('numeroCelular').touched">* Pattern.</p>
                         </div>
                     </div>
                 </div>
